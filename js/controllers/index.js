@@ -9,7 +9,7 @@
   		listEvents: function() {
   			var allEvents = this.get('model.events');
   			allEvents.map(mapISODateToString);
-  			
+
   			return allEvents;
   		}.property('model')
   	});

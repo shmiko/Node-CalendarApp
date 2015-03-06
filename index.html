@@ -3,6 +3,7 @@
   	<head>
 	    <title>Events Manager</title>
 	    <link rel="stylesheet" type="text/css" href="css/index.css">
+	    <link rel="stylesheet" type="text/css" href="vendor/fullcalendar-2.3.0/fullcalendar.css">
   	</head>
 
   	<body>
@@ -10,16 +11,8 @@
 	    </div>
 
 	    <script type="text/x-handlebars" data-template-name="index">
-	    	<div class="container">
-	    		Events : 
-	    		<div class="list-events">
-	    		{{#each listEvents}}
-	    			<div class="event-details">
-	    				<div class="day">{{day}}</div>
-	    				<div class="event">{{event}}</div>
-	    			</div>
-	    		{{/each}}
-	    		</div>
+	    	<div id="container">
+	    		
 	    	</div>
 	    </script>
 
@@ -30,10 +23,12 @@
 	    <script src="vendor/js/ember.js"></script>
 	    <script src="vendor/js/moment.min.js"></script>
 	    <script src="vendor/js/socket.io.js"></script>
+	    <script src="vendor/fullcalendar-2.3.0/fullcalendar.js"></script>
 
 	    <script src="js/app/app.js"></script>
 	    <script src="js/app/router.js"></script>
 
 	    <script src="js/controllers/index.js"></script>
+	    <script src="js/views/index.js"></script>
  	</body>
 </html>
