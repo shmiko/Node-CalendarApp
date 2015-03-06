@@ -1,0 +1,25 @@
+.container {
+
+}
+
+.list-events {
+
+}
+
+.event-details {
+	min-height: 50px;
+}
+
+.day {
+	float: left;
+	font-weight: 600;
+	font-size: 20px;
+	width: 25%;
+	text-overflow: ellipsis;
+}
+
+.event {
+	color: rgb(144, 72, 20);
+	font-size: 15px;
+	font-weight: 600;
+}

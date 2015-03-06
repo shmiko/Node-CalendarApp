@@ -2,10 +2,10 @@
 <html>
   	<head>
 	    <title>Events Manager</title>
+	    <link rel="stylesheet" type="text/css" href="css/index.css">
   	</head>
 
   	<body>
-
 	    <div id="ember-root">
 	    </div>
 
@@ -14,9 +14,9 @@
 	    		Events : 
 	    		<div class="list-events">
 	    		{{#each listEvents}}
-	    			<div class="event">
-	    				<div>{{day}}</div>
-	    				<div>{{event}}</div>
+	    			<div class="event-details">
+	    				<div class="day">{{day}}</div>
+	    				<div class="event">{{event}}</div>
 	    			</div>
 	    		{{/each}}
 	    		</div>
