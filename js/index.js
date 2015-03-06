@@ -9,22 +9,28 @@
 	console.log('Server started at port 9000..!');
 
 	io.on('connection', function (socket) {
-	  socket.on('openDB', function (data) {
-	    console.log(data);
-	    socket.emit('openDBstatus', {success : 'success'});
-	  });
+		var MongoClient = require('mongodb').MongoClient;
 
-	  socket.on('closeDB', function (data) {
-	    console.log(data);
-	  });
+		socket.on('openDB', function (data) {
+			// Connect to the db
+			MongoClient.connect("mongodb://localhost:27017/test", function(err, db) {
+			  if(!err) {
+			    socket.emit('openDBstatus', {success : 'success'});
+			  }
+			});
+		});
 
-	  socket.on('getEvents', function (data) {
-	    console.log(data);
-	  });
+		socket.on('closeDB', function (data) {
+			console.log(data);
+		});
 
-	  socket.on('addEvent', function (data) {
-	    console.log(data);
-	  });
+		socket.on('getEvents', function (data) {
+			console.log(data);
+		});
+
+		socket.on('addEvent', function (data) {
+			console.log(data);
+		});
 
 	});
 })(typeof window == "undefined" ? global : window);
