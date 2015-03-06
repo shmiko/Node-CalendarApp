@@ -12,7 +12,14 @@
 	    <script type="text/x-handlebars" data-template-name="index">
 	    	<div class="container">
 	    		Events : 
-	    		<!-- Display all events for a month -->
+	    		<div class="list-events">
+	    		{{#each listEvents}}
+	    			<div class="event">
+	    				<div>{{day}}</div>
+	    				<div>{{event}}</div>
+	    			</div>
+	    		{{/each}}
+	    		</div>
 	    	</div>
 	    </script>
 
@@ -26,5 +33,7 @@
 
 	    <script src="js/app/app.js"></script>
 	    <script src="js/app/router.js"></script>
+
+	    <script src="js/controllers/index.js"></script>
  	</body>
 </html>
