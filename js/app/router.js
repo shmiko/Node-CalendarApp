@@ -6,7 +6,15 @@
 	});
 
 	App.IndexRoute = Ember.Route.extend({
-		// Retrieve data from database for one month
+		model : function() {
+			var socket = App.socket,
+				data = {};
+
+			socket.emit('openDB', JSON.stringify(data));
+			socket.on('openDBstatus', function(data) {
+				console.log(data);
+			});
+		}
 	});
   	
 }());
