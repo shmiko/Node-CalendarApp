@@ -3,6 +3,7 @@
   	<head>
 	    <title>Events Manager</title>
 	    <link rel="stylesheet" type="text/css" href="css/index.css">
+	    <link rel="stylesheet" type="text/css" href="vendor/bootstrap-3.3.2-dist/css/bootstrap.min.css">
 	    <link rel="stylesheet" type="text/css" href="vendor/fullcalendar-2.3.0/fullcalendar.css">
   	</head>
 
@@ -14,10 +15,29 @@
 	    	<div id="container">
 	    		
 	    	</div>
+	    	
+			<!-- Add events to calendar -->
+	    	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel">Add Event</h4>
+			      </div>
+			      <div class="modal-body">
+			        Event : {{ input valueBindings="eventText" size="50"}}
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			        <button type="button" class="btn btn-primary" {{action 'saveEvent'}}>{{saveStatus}}</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 	    </script>
 
 	    <!-- vendor scripts -->
-	    <script src="vendor/js/jquery-1.10.2.min.js"></script>
+	    <script src="vendor/js/jquery-1.9.1.js"></script>
 	    <script src="vendor/js/bootstrap.js"></script>
 	    <script src="vendor/js/handlebars.js"></script>
 	    <script src="vendor/js/ember.js"></script>

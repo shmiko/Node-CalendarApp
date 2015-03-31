@@ -16,9 +16,14 @@
         calendarEvents.push(calendarEvent);
       });
       $('#container').fullCalendar({
-        events: calendarEvents,
+        eventSources : [{
+          events : calendarEvents,
+          color : 'gray',
+          textColor : 'white'
+        }],
         dayClick : function (event) {
-          debugger
+          var date = new Date(event);
+          $('#myModal').modal('show');
         }
       });
     }.on('didInsertElement')
